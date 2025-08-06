@@ -1,0 +1,16 @@
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.active {
+    display: block !important;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}

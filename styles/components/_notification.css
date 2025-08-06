@@ -1,0 +1,424 @@
+/* Notification */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-content {
+    background: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.notification.success .notification-content {
+    border-left-color: #10b981;
+}
+
+.notification.error .notification-content {
+    border-left-color: #ef4444;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray);
+}
+.notification-close:hover {
+    color: var(--dark-gray);
+}
+
+/* CSS נוסף למערכת */
+
+/* טוען גלובלי */
+.global-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+.loader-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader-content p {
+    margin: 0;
+    color: #333;
+    font-weight: 500;
+}
+
+/* הודעות שגיאה */
+.error-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #ff4757, #ff3742);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    z-index: 10000;
+    max-width: 350px;
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+    animation: slideInRight 0.3s ease-out;
+}
+
+.error-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.error-content i {
+    font-size: 1.2rem;
+}
+
+.error-content button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.error-content button:hover {
+    opacity: 1;
+}
+
+/* הודעות הצלחה */
+.success-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #2ed573, #1dd1a1);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    z-index: 10000;
+    max-width: 350px;
+    box-shadow: 0 5px 15px rgba(46, 213, 115, 0.4);
+    animation: slideInRight 0.3s ease-out;
+}
+
+.success-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.success-content i {
+    font-size: 1.2rem;
+}
+
+.success-content button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.success-content button:hover {
+    opacity: 1;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* עיצוב משופר לפרופיל */
+.profile-info-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.profile-avatar i {
+    font-size: 4rem;
+    color: white;
+    opacity: 0.9;
+}
+
+.profile-data p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.profile-data strong {
+    font-weight: 600;
+}
+
+.profile-actions {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.edit-profile-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.edit-profile-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* עיצוב הזמנות */
+.order-item {
+    background: white;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.order-header h4 {
+    margin: 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.order-status {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.order-status.confirmed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.order-status.processing {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.order-status.shipped {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.order-status.delivered {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.order-status.cancelled {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.order-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.order-info p {
+    margin: 0.3rem 0;
+    color: #666;
+}
+
+.order-info strong {
+    color: #333;
+}
+
+.order-items h5 {
+    margin: 1rem 0 0.5rem 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.order-products-list {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.order-product {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.order-product img {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.order-product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.product-name {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.product-quantity {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.product-price {
+    color: #007bff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* עיצוב כאשר אין הזמנות */
+.no-orders {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #666;
+}
+
+.no-orders i {
+    font-size: 4rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.no-orders p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.start-shopping-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.start-shopping-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* מדיה קוורי לרספונסיביות */
+@media (max-width: 768px) {
+    .error-notification,
+    .success-notification {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+    
+    .profile-info-card {
+        padding: 1.5rem;
+    }
+    
+    .order-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .order-product {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
