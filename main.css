@@ -1,0 +1,23 @@
+/* main.css - הקובץ הראשי שמייבא את כל שאר הקבצים */
+
+@import url("styles/base/_reset.css");
+@import url("styles/base/_variables.css");
+@import url("styles/base/_utilities.css");
+
+@import url("styles/layout/_header.css");
+@import url("styles/layout/_footer.css");
+@import url("styles/layout/_main.css");
+
+@import url("styles/components/_buttons.css");
+@import url("styles/components/_cards.css");
+@import url("styles/components/_dropdown.css");
+@import url("styles/components/_forms.css");
+@import url("styles/components/_cart.css");
+@import url("styles/components/_profile.css");
+@import url("styles/components/_notification.css");
+
+@import url("styles/pages/_home.css");
+@import url("styles/pages/_product-details.css");
+
+@import url("styles/_responsive.css");
+@import url("styles/_animations.css");
